@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Ejer005 {
 
     /*
-    *Enunciado
+     *Enunciado
      * Crea un metodo, que acepte un parametro "tamaño"
      * Genere un array de "tamaño" con posiciones de numero aleatorios 0-1000
      * y lo muestre por pantalla
@@ -21,29 +21,46 @@ public class Ejer005 {
 
     public static void main(String[] args) {
 
-        int[] array = arrAleatorio();
+        int[] array = arrTamaño();
+        array = arrayAleatorio(array);
+        imprimir(array);
     }
 
-    public static int[] arrAleatorio() {
+    public static int[] arrTamaño() {
 
 
         Scanner sc = new Scanner(System.in);
-        final int numMaxR = 1000;
+//final int numMaxR = 1000;
         System.out.println("Ingrese el tamaño del Array");
 
         int size = sc.nextInt();
         int[] arrNuevo = new int[size];
         System.out.println("Se ha creado el array");
         return arrNuevo;
-
-        if (size > 0) {
-            for (int i = 0; i < arrNuevo.length; i++) {
-
-            }
-        }
-
     }
+
+    public static int[] arrayAleatorio(int[] array) {
+        // Número aleatorio entre 0 y 40, excluido el 40.
+        int randomNumber = (int) (Math.random() + 1);
+
+        int[] arrNuevo = new int[randomNumber];
+        for (int i = 0; i < arrNuevo.length; i++) {
+            arrNuevo[i] = arrNuevo[i];
+        }
+        return arrNuevo;
+    }
+
+    public static void imprimir(int[] arrayNuevo) {
+        for (int i = 0; i < arrNuevo.length; i++) {
+
+            System.out.print(arrNuevo[i] + " ");
+
+        }
+    }
+
 }
+
+
 
 
 
